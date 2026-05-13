@@ -1,0 +1,40 @@
+header{
+    margin-bottom: 3%;
+}
+footer{
+    
+    margin-top: auto;
+    background-color: rgb(206, 206, 206);
+    text-align: center;
+    padding: 10px;
+}
+.explicacao{
+    
+    text-align: center;
+}
+h1{
+    padding-bottom: 2%;
+}
+table{
+    margin-top: 10%;
+    margin-left: 34%;
+    margin-bottom: 14.25%;
+}
+td{
+    background-image: url("img/unnamed.jpg");
+    background-repeat: no-repeat;
+    
+    text-align: center;
+    color: white;
+    padding: 5%;
+    height: 200px;
+    width: 200px;
+
+    
+    
+}
+img{
+    width: 200px;
+    height: 200px;
+
+}
