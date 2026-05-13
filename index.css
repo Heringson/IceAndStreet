@@ -7,13 +7,13 @@
 }
 
 
-/* Corpo */
+/* Corpo com imagem de fundo */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("img/0e9f2429-fcf0-4baf-9fd9-d95a14e51dcc.jpg") no-repeat center center/cover;
     color: #fff;
-    padding: 20px;
+    padding: 40px;
 }
 
 
@@ -24,19 +24,32 @@ body {
 }
 
 
-/* Título */
+/* Título principal */
 
 h1 {
     margin-bottom: 20px;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    color: #ffffff;
+    letter-spacing: 1px;
 }
 
 
-/* Texto */
+/* Texto padrão */
 
 p {
     max-width: 700px;
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
+}
+
+
+/* TEXTO DESCRIÇÃO */
+
+.descricao {
+    color: #ffffff;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
 }
 
 
@@ -44,29 +57,36 @@ p {
 
 .cards {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+    flex-wrap: nowrap;
 }
 
 
-/* Card individual */
+/* Card */
 
 .card {
     background: rgba(255, 255, 255, 0.1);
-    padding: 15px;
+    padding: 20px;
     border-radius: 15px;
-    width: 250px;
+    width: 260px;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     transition: transform 0.3s ease, background 0.3s;
 }
 
+
+/* Hover */
+
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.2);
 }
 
 
-/* Imagens */
+/* Imagem */
 
 .card img {
     width: 100%;
@@ -75,8 +95,9 @@ p {
 }
 
 
-/* Títulos dos cards */
+/* Título dos cards */
 
 .card h2 {
     margin-bottom: 10px;
+    color: #ffffff;
 }
