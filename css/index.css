@@ -1,4 +1,4 @@
-/* IMPORTA A FONTE */
+/* importando a fonte radical brush */
 
 @font-face {
     font-family: 'RadicalBrush';
@@ -13,7 +13,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("img/0e9f2429-fcf0-4baf-9fd9-d95a14e51dcc.jpg") no-repeat center center/cover;
+    background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/img/0e9f2429-fcf0-4baf-9fd9-d95a14e51dcc.jpg") no-repeat center center/cover;
     color: #fff;
     padding: 40px;
 }
@@ -62,6 +62,14 @@ h1 {
     background: rgba(255, 255, 255, 0.2);
 }
 
+.card:hover p {
+    color: #ffffff;
+}
+
+.card:hover h2 {
+    color: #ffffff;
+}
+
 .imagem-container {
     position: relative;
     width: 100%;
@@ -69,7 +77,7 @@ h1 {
 
 .imagem-container img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 30px;
     transition: opacity 0.5s ease;
 }
 
@@ -90,11 +98,8 @@ h1 {
 
 .card h2 {
     margin-bottom: 10px;
-    color: #ffffff;
+    color: #000000;
 }
-
-
-/* TEXTO DOS CARDS!!!!!!! */
 
 .card p {
     margin-top: 15px;
