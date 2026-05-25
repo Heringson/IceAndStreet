@@ -5,6 +5,8 @@ module.exports = defineConfig({
     allowCypressEnv: false,
 
     e2e: {
+        baseUrl: null,
+        supportFile: false,
         setupNodeEvents(on, config) {},
     },
 });
