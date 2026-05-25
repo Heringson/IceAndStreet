@@ -1,0 +1,110 @@
+/* IMPORTA A FONTE (Caminho ajustado para sair da pasta css e achar a pasta fonts) */
+
+@font-face {
+    font-family: 'RadicalBrush';
+    src: url('../fonts/Radical Brush DEMO.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* Imagem de fundo com o mesmo degradê da index */
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/borda\ hockey.jpg") no-repeat center center/cover;
+    background-attachment: fixed;
+    /* Deixa o fundo parado ao rolar */
+    color: #fff;
+    padding: 40px;
+}
+
+
+/* Título Principal com a fonte Radical */
+
+header h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 5rem;
+    color: #ffffff;
+    letter-spacing: 3px;
+    font-family: 'RadicalBrush';
+}
+
+header p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #00d4ff;
+    /* Um azul para dar destaque */
+}
+
+
+/* O corpo principal agora parece um "Card Gigante" transparente */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    /* Transparência igual aos cards */
+    backdrop-filter: blur(10px);
+    /* Efeito de vidro embaçado */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h2,
+h3 {
+    font-family: 'RadicalBrush', Arial;
+    color: #00d4ff;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+p {
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    text-align: justify;
+}
+
+
+/* Estilo das imagens dos atletas (seguindo o padrão dos cards) */
+
+img {
+    display: block;
+    max-width: 80%;
+    margin: 20px auto;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+
+/* Estilização da Lista (ol) */
+
+ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+/* Rodapé */
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
