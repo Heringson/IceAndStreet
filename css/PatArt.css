@@ -33,9 +33,6 @@ header p {
     color: #000000;
 }
 
-
-/* O corpo principal agora parece um "Card Gigante" transparente */
-
 main {
     max-width: 1000px;
     margin: 0 auto;
@@ -65,7 +62,7 @@ p {
 
 img {
     display: block;
-    width: 900px;
+    width: 700px;
     /* Largura */
     height: 850px;
     /* Altura */
