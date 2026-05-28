@@ -1,8 +1,8 @@
-/* IMPORTA A FONTE (Caminho ajustado para sair da pasta css e achar a pasta fonts) */
+/* 1. CONFIGURAÇÕES GERAIS E FONTES */
 
 @font-face {
     font-family: 'RadicalBrush';
-    src: url('../fonts/Radical Brush DEMO.otf') format('opentype');
+    src: url('fonts/Radical Brush DEMO.otf') format('opentype');
 }
 
 * {
@@ -13,18 +13,136 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    /* Imagem de fundo com o mesmo degradê da index */
-    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/borda\ inline.jpg") no-repeat center center/cover;
-    background-attachment: fixed;
-    /* Deixa o fundo parado ao rolar */
     color: #fff;
     padding: 40px;
+    background-attachment: fixed;
+    /* Mantém o fundo fixo nas subpáginas */
 }
 
 
-/* Título Principal com a fonte Radical */
+/*INDEX (HOME)*/
 
-header h1 {
+body.home-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/img/0e9f2429-fcf0-4baf-9fd9-d95a14e51dcc.jpg") no-repeat center center/cover;
+}
+
+.container {
+    text-align: center;
+}
+
+h1.index-title {
+    margin-bottom: 20px;
+    font-size: 5rem;
+    color: #ffffff;
+    letter-spacing: 3px;
+    font-family: 'RadicalBrush';
+}
+
+.descricao {
+    color: #ffffff;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+
+/* Sistema de Cards da Index */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+}
+
+.card {
+    background: rgba(0, 51, 102, 0.4);
+    padding: 20px;
+    border-radius: 15px;
+    width: 260px;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.card:hover p,
+.card:hover h2 {
+    color: #ffffff;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.card p {
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+
+/* Efeito de troca de imagem no hover dos cards */
+
+.imagem-container {
+    position: relative;
+    width: 100%;
+}
+
+.imagem-container img {
+    width: 100%;
+    border-radius: 30px;
+    transition: opacity 0.5s ease;
+}
+
+.img2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.card:hover .img2 {
+    opacity: 1;
+}
+
+.card:hover .img1 {
+    opacity: 0;
+}
+
+
+/*(Hockey, Inline, PatArt, Quad).css */
+
+
+/* Fundos Dinâmicos baseados na classe do Body */
+
+body.hockey-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/borda hockey.jpg") no-repeat center center/cover;
+}
+
+body.inline-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/borda inline.jpg") no-repeat center center/cover;
+}
+
+body.patart-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/borda artistico no gelo.jpg") no-repeat center center/cover;
+}
+
+body.quad-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/borda quad.jpg") no-repeat center center/cover;
+}
+
+
+/* Cabeçalho das Subpáginas */
+
+header h1.sub-title {
     text-align: center;
     margin-bottom: 10px;
     font-size: 5rem;
@@ -33,31 +151,37 @@ header h1 {
     font-family: 'RadicalBrush';
 }
 
-header p {
+header p.sub-desc {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 40px;
-    color: #00d4ff;
-    /* Um azul para dar destaque */
+    color: #6bb7c6;
+    /* Azul padrão de destaque */
 }
 
 
-/* O corpo principal agora parece um "Card Gigante" transparente */
+/* Ajuste específico de cor para a página de Patinação Artística */
 
-main {
+body.patart-page header p.sub-desc {
+    margin-bottom: 80px;
+    color: #000000;
+}
+
+
+/* Corpo Principal (Card Gigante) */
+
+main.sub-content {
     max-width: 1000px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.1);
-    /* Transparência igual aos cards */
     backdrop-filter: blur(10px);
-    /* Efeito de vidro embaçado */
     padding: 40px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-h2,
-h3 {
+main.sub-content h2,
+main.sub-content h3 {
     font-family: 'RadicalBrush', Arial;
     color: #00d4ff;
     margin-top: 30px;
@@ -65,7 +189,7 @@ h3 {
     letter-spacing: 1px;
 }
 
-p {
+main.sub-content p {
     line-height: 1.7;
     margin-bottom: 20px;
     font-size: 1.1rem;
@@ -74,37 +198,79 @@ p {
 }
 
 
-/* Estilo das imagens dos atletas (seguindo o padrão dos cards) */
+/* Listas das Subpáginas */
 
-img {
+main.sub-content ol {
+    padding-left: 20px;
+}
+
+main.sub-content li {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+
+/* Ajuste de lista específico para PatArt */
+
+body.patart-page main.sub-content li {
+    margin-bottom: 25px;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+
+/* Imagens Gerais das Subpáginas */
+
+main.sub-content img {
     display: block;
     max-width: 80%;
     margin: 20px auto;
     border-radius: 15px;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
-/* Estilização da Lista (ol) */
+/* Customização de Imagem exclusiva para PatArt */
 
-ol {
-    padding-left: 20px;
+body.patart-page main.sub-content img {
+    width: 700px;
+    height: 850px;
+    object-fit: cover;
+    margin: 30px auto;
 }
 
-li {
-    margin-bottom: 15px;
-    font-weight: bold;
-    font-size: 1.2rem;
+body.patart-page main.sub-content img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
 }
 
 
 /* Rodapé */
 
-footer {
+footer.sub-footer {
     text-align: center;
     margin-top: 50px;
     padding: 20px;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ==========================================================================
+   4. RESPONSIVIDADE (Media Queries)
+   ========================================================================== */
+
+@media (max-width: 576px) {
+    header h1.sub-title {
+        font-size: 3rem;
+    }
+    main.sub-content {
+        padding: 20px;
+    }
+    body.patart-page main.sub-content img {
+        width: 100%;
+        height: 280px;
+    }
 }
