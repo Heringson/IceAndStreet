@@ -57,11 +57,7 @@ jobs:
                 node-version: '20'
             
             - name: Install packages
-              run: |
-                cd integration-test
-                npm install
+              run: npm install
 
             - name: Run Cypress E2E Test
-              run: |
-                cd integration-test
-                npx cypress run
+              run: npx cypress run
