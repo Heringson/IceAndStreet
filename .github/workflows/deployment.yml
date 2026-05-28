@@ -51,13 +51,6 @@ jobs:
               with:
                 fetch-depth: 0
             
-            - name: Setup Nodejs
-              uses: actions/setup-node@v3.9.1
-              with:
-                node-version: '20'
-            
-            - name: Install packages
-              run: npm install
-
+            # Usando a Action oficial do Cypress que cuida de permissões e instalação automaticamente
             - name: Run Cypress E2E Test
-              run: npx cypress run
+              uses: cypress-io/github-action@v7
