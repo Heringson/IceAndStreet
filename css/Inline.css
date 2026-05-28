@@ -258,9 +258,7 @@ footer.sub-footer {
 }
 
 
-/* ==========================================================================
-   4. RESPONSIVIDADE (Media Queries)
-   ========================================================================== */
+/* RESPONSIVIDADE (Media Queries)*/
 
 @media (max-width: 576px) {
     header h1.sub-title {
