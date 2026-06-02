@@ -1,3 +1,4 @@
+#Integração para usar sonar
 name: integration ci sonar
 run-name: Pipeline de integração contínua e analise de código
 

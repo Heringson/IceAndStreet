@@ -1,3 +1,4 @@
+#Arquivo usado para Cypress e Deploy
 name: Deploy
 run-name: Deploy do site
 on:
@@ -51,6 +52,5 @@ jobs:
               with:
                 fetch-depth: 0
             
-            # Usando a Action oficial do Cypress que cuida de permissões e instalação automaticamente
             - name: Run Cypress E2E Test
               uses: cypress-io/github-action@v7

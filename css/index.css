@@ -1,6 +1,4 @@
-/* ==========================================
-   1. REGISTRO DE FONTES
-   ========================================== */
+/*fontes usadas*/
 
 @font-face {
     font-family: 'RadicalBrush';
@@ -23,9 +21,7 @@
 }
 
 
-/* ==========================================
-   2. CONFIGURAÇÕES GERAIS E PLANO DE FUNDO
-   ========================================== */
+/*configuração geral e imagens de fundo*/
 
 * {
     margin: 0;
@@ -43,16 +39,14 @@ body {
 }
 
 
-/* ==========================================
-   3. INDEX (HOME PAGE)
-   ========================================== */
+/* index.html */
 
 .container {
     text-align: center;
 }
 
 
-/* Título Principal "IceAndStreet" */
+/* Título "IceAndStreet" */
 
 h1.index-title {
     margin-bottom: 20px;
@@ -71,7 +65,7 @@ h1.index-title {
 }
 
 
-/* Sistema de Cards na Home */
+/* Sistema de Cards na pagina principal */
 
 .cards {
     display: flex;
@@ -82,7 +76,7 @@ h1.index-title {
 
 .container .cards .card {
     /* O azul padrão dos cards que você curte */
-    background: rgba(0, 51, 102, 0.4);
+    background: rgba(172, 198, 225, 0.4);
     padding: 20px;
     border-radius: 15px;
     width: 260px;
@@ -96,7 +90,7 @@ h1.index-title {
 
 .container .cards .card:hover {
     transform: translateY(-8px);
-    background: rgba(0, 51, 102, 0.7) !important;
+    background: rgba(179, 209, 240, 0.7) !important;
     /* Mantém a identidade azul no hover, apenas mais nítida */
 }
 
