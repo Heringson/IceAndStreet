@@ -1,9 +1,31 @@
-/* 1. CONFIGURAÇÕES GERAIS E FONTES */
+/* ==========================================
+   1. REGISTRO DE FONTES
+   ========================================== */
 
 @font-face {
     font-family: 'RadicalBrush';
-    src: url('fonts/Radical Brush DEMO.otf') format('opentype');
+    src: url('../fonts/Radical Brush DEMO.otf') format('opentype');
 }
+
+@font-face {
+    font-family: 'PlanetGamers';
+    src: url('../fonts/Planet Gamers DEMO.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'MeltingIce';
+    src: url('../fonts/Melting Ice.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SpeedDemon';
+    src: url('../fonts/SpeedDemon.ttf') format('truetype');
+}
+
+
+/* ==========================================
+   2. CONFIGURAÇÕES GERAIS E PLANO DE FUNDO
+   ========================================== */
 
 * {
     margin: 0;
@@ -15,27 +37,29 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
     padding: 40px;
+    /* Fundo escuro unificado */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/fundo-preto.avif") no-repeat center center/cover;
     background-attachment: fixed;
-    /* Mantém o fundo fixo nas subpáginas */
 }
 
 
-/*INDEX (HOME)*/
-
-body.home-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/img/0e9f2429-fcf0-4baf-9fd9-d95a14e51dcc.jpg") no-repeat center center/cover;
-}
+/* ==========================================
+   3. INDEX (HOME PAGE)
+   ========================================== */
 
 .container {
     text-align: center;
 }
+
+
+/* Título Principal "IceAndStreet" */
 
 h1.index-title {
     margin-bottom: 20px;
     font-size: 5rem;
     color: #ffffff;
     letter-spacing: 3px;
-    font-family: 'RadicalBrush';
+    font-family: 'PlanetGamers', sans-serif !important;
 }
 
 .descricao {
@@ -47,7 +71,7 @@ h1.index-title {
 }
 
 
-/* Sistema de Cards da Index */
+/* Sistema de Cards na Home */
 
 .cards {
     display: flex;
@@ -56,7 +80,8 @@ h1.index-title {
     flex-wrap: nowrap;
 }
 
-.card {
+.container .cards .card {
+    /* O azul padrão dos cards que você curte */
     background: rgba(0, 51, 102, 0.4);
     padding: 20px;
     border-radius: 15px;
@@ -66,30 +91,46 @@ h1.index-title {
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease, background 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.card:hover {
+.container .cards .card:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 51, 102, 0.7) !important;
+    /* Mantém a identidade azul no hover, apenas mais nítida */
 }
 
-.card:hover p,
-.card:hover h2 {
+.container .cards .card:hover p,
+.container .cards .card:hover h2 {
     color: #ffffff;
 }
 
-.card h2 {
-    margin-bottom: 10px;
-    color: #000000;
+
+/* Fontes dos Cards */
+
+.container .cards .card.card-gelo h2,
+.container .cards .card.card-hockey h2 {
+    font-family: 'MeltingIce', sans-serif !important;
 }
 
-.card p {
+.container .cards .card.card-inline h2,
+.container .cards .card.card-quad h2 {
+    font-family: 'SpeedDemon', sans-serif !important;
+}
+
+.container .cards .card h2 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.container .cards .card p {
     margin-top: 15px;
     line-height: 1.5;
+    color: #ffffff;
 }
 
 
-/* Efeito de troca de imagem no hover dos cards */
+/* Efeito de imagem nos cards */
 
 .imagem-container {
     position: relative;
@@ -118,29 +159,22 @@ h1.index-title {
 }
 
 
-/*(Hockey, Inline, PatArt, Quad).css */
+/* ==========================================
+   4. SUBPÁGINAS (ATUALIZADO PARA COMPATIBILIDADE DE CORES)
+   ========================================== */
 
 
-/* Fundos Dinâmicos baseados na classe do Body */
+/* Títulos Principais das Subpáginas */
 
-body.hockey-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/borda hockey.jpg") no-repeat center center/cover;
+body.hockey-page header h1.sub-title,
+body.patart-page header h1.sub-title {
+    font-family: 'MeltingIce', sans-serif !important;
 }
 
-body.inline-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/borda inline.jpg") no-repeat center center/cover;
+body.inline-page header h1.sub-title,
+body.quad-page header h1.sub-title {
+    font-family: 'SpeedDemon', sans-serif !important;
 }
-
-body.patart-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/borda artistico no gelo.jpg") no-repeat center center/cover;
-}
-
-body.quad-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("img/borda quad.jpg") no-repeat center center/cover;
-}
-
-
-/* Cabeçalho das Subpáginas */
 
 header h1.sub-title {
     text-align: center;
@@ -148,42 +182,45 @@ header h1.sub-title {
     font-size: 5rem;
     color: #ffffff;
     letter-spacing: 3px;
-    font-family: 'RadicalBrush';
 }
+
+
+/* ALTERADO: A descrição embaixo do título agora usa o tom de azul escuro sofisticado */
 
 header p.sub-desc {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 40px;
-    color: #6bb7c6;
-    /* Azul padrão de destaque */
+    color: #4b86b4;
 }
-
-
-/* Ajuste específico de cor para a página de Patinação Artística */
 
 body.patart-page header p.sub-desc {
     margin-bottom: 80px;
-    color: #000000;
+    color: #4b86b4;
 }
 
 
-/* Corpo Principal (Card Gigante) */
+/* Corpo Principal (O Card Gigante das Subpáginas) */
 
 main.sub-content {
     max-width: 1000px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1);
+    /* ALTERADO: Agora usa exatamente o mesmo tom de azul escuro translúcido (rgba) dos seus cards */
+    background: rgba(0, 51, 102, 0.4);
     backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
+
+
+/* ALTERADO: Os títulos internos H2 e H3 que eram azul claro agora usam o azul combinando ou branco puro */
 
 main.sub-content h2,
 main.sub-content h3 {
-    font-family: 'RadicalBrush', Arial;
-    color: #00d4ff;
+    font-family: 'RadicalBrush', Arial !important;
+    color: #79a6d2;
+    /* Um azul médio harmônico que contrasta perfeitamente com o fundo escuro */
     margin-top: 30px;
     margin-bottom: 15px;
     letter-spacing: 1px;
@@ -208,10 +245,8 @@ main.sub-content li {
     font-size: 1.2rem;
     margin-bottom: 15px;
     font-weight: bold;
+    color: #ffffff;
 }
-
-
-/* Ajuste de lista específico para PatArt */
 
 body.patart-page main.sub-content li {
     margin-bottom: 25px;
@@ -220,7 +255,7 @@ body.patart-page main.sub-content li {
 }
 
 
-/* Imagens Gerais das Subpáginas */
+/* Imagens das Subpáginas */
 
 main.sub-content img {
     display: block;
@@ -232,7 +267,7 @@ main.sub-content img {
 }
 
 
-/* Customização de Imagem exclusiva para PatArt */
+/* PatArt Layout */
 
 body.patart-page main.sub-content img {
     width: 700px;
@@ -243,7 +278,8 @@ body.patart-page main.sub-content img {
 
 body.patart-page main.sub-content img:hover {
     transform: scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.5);
+    /* Sombra ajustada para o azul escuro */
 }
 
 
@@ -258,7 +294,7 @@ footer.sub-footer {
 }
 
 
-/* RESPONSIVIDADE (Media Queries)*/
+/* RESPONSIVIDADE */
 
 @media (max-width: 576px) {
     header h1.sub-title {
@@ -273,31 +309,30 @@ footer.sub-footer {
     }
 }
 
+
+/* Botão Voltar */
+
 .btn-back {
     position: fixed;
     top: 25px;
     left: 25px;
     z-index: 9999;
-    padding: 14px 28px;
-    background: linear-gradient( 135deg, rgba(0, 212, 255, 0.9), rgba(0, 102, 255, 0.9));
-    color: white;
+    padding: 12px 22px;
+    background: rgba(0, 51, 102, 0.4);
+    /* Ajustado para conversar com os cards */
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border-radius: 50px;
-    border: none;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5), 0 0 35px rgba(0, 212, 255, 0.3);
-    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all .3s ease;
 }
 
 .btn-back:hover {
-    color: white;
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 212, 255, 0.8), 0 0 50px rgba(0, 212, 255, 0.5);
-}
-
-.btn-back::before {
-    content: "❮";
-    margin-right: 10px;
-    font-size: 1.1rem;
+    background: rgba(0, 51, 102, 0.8);
+    border-color: #79a6d2;
+    transform: translateX(-5px);
+    box-shadow: 0 8px 25px rgba(0, 51, 102, 0.4);
 }
