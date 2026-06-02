@@ -47,7 +47,7 @@ h1.index-title {
 }
 
 
-/* Sistema de Cards da Index */
+/* Sistema de Cards da Index (Corrigido para vencer o Bootstrap) */
 
 .cards {
     display: flex;
@@ -56,7 +56,10 @@ h1.index-title {
     flex-wrap: nowrap;
 }
 
-.card {
+
+/* Seletor mais específico para forçar a cor azulada transparente */
+
+.container .cards .card {
     background: rgba(0, 51, 102, 0.4);
     padding: 20px;
     border-radius: 15px;
@@ -66,26 +69,35 @@ h1.index-title {
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease, background 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Linha sutil opcional */
 }
 
-.card:hover {
+.container .cards .card:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2) !important;
 }
 
-.card:hover p,
-.card:hover h2 {
+.container .cards .card:hover p,
+.container .cards .card:hover h2 {
     color: #ffffff;
 }
 
-.card h2 {
+
+/* Corrigido para o título não sumir no fundo escuro */
+
+.container .cards .card h2 {
     margin-bottom: 10px;
-    color: #000000;
+    color: #ffffff;
 }
 
-.card p {
+
+/* CORRIGIDO: Força a descrição (<p>) a ficar branca por padrão sobre o fundo escuro */
+
+.container .cards .card p {
     margin-top: 15px;
     line-height: 1.5;
+    color: #ffffff;
 }
 
 
