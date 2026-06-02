@@ -24,7 +24,7 @@
 
 
 /* ==========================================
-   2. CONFIGURAÇÕES GERAIS E NOVO FUNDO PADRÃO
+   2. CONFIGURAÇÕES GERAIS E PLANO DE FUNDO
    ========================================== */
 
 * {
@@ -33,13 +33,11 @@
     box-sizing: border-box;
 }
 
-
-/* ATUALIZADO: Fundo unificado para TODAS as páginas usando fundo-preto.avif */
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
     padding: 40px;
+    /* Fundo escuro unificado */
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/fundo-preto.avif") no-repeat center center/cover;
     background-attachment: fixed;
 }
@@ -83,6 +81,7 @@ h1.index-title {
 }
 
 .container .cards .card {
+    /* O azul padrão dos cards que você curte */
     background: rgba(0, 51, 102, 0.4);
     padding: 20px;
     border-radius: 15px;
@@ -97,7 +96,8 @@ h1.index-title {
 
 .container .cards .card:hover {
     transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(0, 51, 102, 0.7) !important;
+    /* Mantém a identidade azul no hover, apenas mais nítida */
 }
 
 .container .cards .card:hover p,
@@ -106,7 +106,7 @@ h1.index-title {
 }
 
 
-/* Seletores das fontes dos cards */
+/* Fontes dos Cards */
 
 .container .cards .card.card-gelo h2,
 .container .cards .card.card-hockey h2 {
@@ -130,7 +130,7 @@ h1.index-title {
 }
 
 
-/* Efeito de troca de imagem nos cards */
+/* Efeito de imagem nos cards */
 
 .imagem-container {
     position: relative;
@@ -160,11 +160,11 @@ h1.index-title {
 
 
 /* ==========================================
-   4. SUBPÁGINAS (ESTILOS INDIVIDUAIS)
+   4. SUBPÁGINAS (ATUALIZADO PARA COMPATIBILIDADE DE CORES)
    ========================================== */
 
 
-/* Fontes dos Títulos Principais das Subpáginas */
+/* Títulos Principais das Subpáginas */
 
 body.hockey-page header h1.sub-title,
 body.patart-page header h1.sub-title {
@@ -184,37 +184,43 @@ header h1.sub-title {
     letter-spacing: 3px;
 }
 
+
+/* ALTERADO: A descrição embaixo do título agora usa o tom de azul escuro sofisticado */
+
 header p.sub-desc {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 40px;
-    color: #6bb7c6;
+    color: #4b86b4;
 }
 
 body.patart-page header p.sub-desc {
     margin-bottom: 80px;
-    color: #ffffff;
-    /* Ajustado para branco para não sumir no fundo escuro */
+    color: #4b86b4;
 }
 
 
-/* Corpo Principal (Card Gigante) */
+/* Corpo Principal (O Card Gigante das Subpáginas) */
 
 main.sub-content {
     max-width: 1000px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.07);
-    /* Deixei um pouco mais transparente para destacar o fundo */
+    /* ALTERADO: Agora usa exatamente o mesmo tom de azul escuro translúcido (rgba) dos seus cards */
+    background: rgba(0, 51, 102, 0.4);
     backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
+
+
+/* ALTERADO: Os títulos internos H2 e H3 que eram azul claro agora usam o azul combinando ou branco puro */
 
 main.sub-content h2,
 main.sub-content h3 {
     font-family: 'RadicalBrush', Arial !important;
-    color: #00d4ff;
+    color: #79a6d2;
+    /* Um azul médio harmônico que contrasta perfeitamente com o fundo escuro */
     margin-top: 30px;
     margin-bottom: 15px;
     letter-spacing: 1px;
@@ -239,6 +245,7 @@ main.sub-content li {
     font-size: 1.2rem;
     margin-bottom: 15px;
     font-weight: bold;
+    color: #ffffff;
 }
 
 body.patart-page main.sub-content li {
@@ -248,7 +255,7 @@ body.patart-page main.sub-content li {
 }
 
 
-/* Imagens Gerais das Subpáginas */
+/* Imagens das Subpáginas */
 
 main.sub-content img {
     display: block;
@@ -260,7 +267,7 @@ main.sub-content img {
 }
 
 
-/* Customização de Imagem exclusiva para PatArt */
+/* PatArt Layout */
 
 body.patart-page main.sub-content img {
     width: 700px;
@@ -271,7 +278,8 @@ body.patart-page main.sub-content img {
 
 body.patart-page main.sub-content img:hover {
     transform: scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 51, 102, 0.5);
+    /* Sombra ajustada para o azul escuro */
 }
 
 
@@ -286,7 +294,7 @@ footer.sub-footer {
 }
 
 
-/* RESPONSIVIDADE (Media Queries) */
+/* RESPONSIVIDADE */
 
 @media (max-width: 576px) {
     header h1.sub-title {
@@ -301,13 +309,17 @@ footer.sub-footer {
     }
 }
 
+
+/* Botão Voltar */
+
 .btn-back {
     position: fixed;
     top: 25px;
     left: 25px;
     z-index: 9999;
     padding: 12px 22px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 51, 102, 0.4);
+    /* Ajustado para conversar com os cards */
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 999px;
@@ -319,8 +331,8 @@ footer.sub-footer {
 }
 
 .btn-back:hover {
-    background: rgba(0, 212, 255, .15);
-    border-color: #00d4ff;
+    background: rgba(0, 51, 102, 0.8);
+    border-color: #79a6d2;
     transform: translateX(-5px);
-    box-shadow: 0 8px 25px rgba(0, 212, 255, .25);
+    box-shadow: 0 8px 25px rgba(0, 51, 102, 0.4);
 }
