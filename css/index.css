@@ -246,6 +246,9 @@ body.patart-page main.sub-content img:hover {
     box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
 }
 
+
+/* Rodapé */
+
 footer.sub-footer {
     text-align: center;
     margin-top: 50px;
@@ -253,6 +256,9 @@ footer.sub-footer {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.5);
 }
+
+
+/* RESPONSIVIDADE (Media Queries)*/
 
 @media (max-width: 576px) {
     header h1.sub-title {
@@ -266,11 +272,6 @@ footer.sub-footer {
         height: 280px;
     }
 }
-
-
-/* =========================
-   BOTÃO VOLTAR PREMIUM
-========================= */
 
 .btn-back {
     position: fixed;
@@ -299,16 +300,4 @@ footer.sub-footer {
     content: "❮";
     margin-right: 10px;
     font-size: 1.1rem;
-}
-
-
-/* Responsivo */
-
-@media (max-width: 576px) {
-    .btn-back {
-        top: 15px;
-        left: 15px;
-        padding: 10px 18px;
-        font-size: 0.9rem;
-    }
 }
