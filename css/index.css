@@ -1,6 +1,4 @@
-/* ==========================================
-   1. REGISTRO DE FONTES
-   ========================================== */
+/*fontes usadas*/
 
 @font-face {
     font-family: 'RadicalBrush';
@@ -23,9 +21,7 @@
 }
 
 
-/* ==========================================
-   2. CONFIGURAÇÕES GERAIS E PLANO DE FUNDO
-   ========================================== */
+/*configuração geral e imagens de fundo*/
 
 * {
     margin: 0;
@@ -43,16 +39,14 @@ body {
 }
 
 
-/* ==========================================
-   3. INDEX (HOME PAGE)
-   ========================================== */
+/* index.html */
 
 .container {
     text-align: center;
 }
 
 
-/* Título Principal "IceAndStreet" */
+/* Título "IceAndStreet" */
 
 h1.index-title {
     margin-bottom: 20px;
@@ -71,7 +65,7 @@ h1.index-title {
 }
 
 
-/* Sistema de Cards na Home */
+/* Sistema de Cards na pagina principal */
 
 .cards {
     display: flex;
@@ -82,7 +76,7 @@ h1.index-title {
 
 .container .cards .card {
     /* O azul padrão dos cards que você curte */
-    background: rgba(0, 51, 102, 0.4);
+    background: rgba(172, 198, 225, 0.4);
     padding: 20px;
     border-radius: 15px;
     width: 260px;
@@ -96,7 +90,7 @@ h1.index-title {
 
 .container .cards .card:hover {
     transform: translateY(-8px);
-    background: rgba(0, 51, 102, 0.7) !important;
+    background: rgba(179, 209, 240, 0.7) !important;
     /* Mantém a identidade azul no hover, apenas mais nítida */
 }
 
@@ -159,9 +153,7 @@ h1.index-title {
 }
 
 
-/* ==========================================
-   4. SUBPÁGINAS (ATUALIZADO PARA COMPATIBILIDADE DE CORES)
-   ========================================== */
+/* subpaginas (inline,quad,hockey e artistico) */
 
 
 /* Títulos Principais das Subpáginas */
@@ -184,9 +176,6 @@ header h1.sub-title {
     letter-spacing: 3px;
 }
 
-
-/* ALTERADO: A descrição embaixo do título agora usa o tom de azul escuro sofisticado */
-
 header p.sub-desc {
     text-align: center;
     font-size: 1.2rem;
@@ -205,7 +194,6 @@ body.patart-page header p.sub-desc {
 main.sub-content {
     max-width: 1000px;
     margin: 0 auto;
-    /* ALTERADO: Agora usa exatamente o mesmo tom de azul escuro translúcido (rgba) dos seus cards */
     background: rgba(0, 51, 102, 0.4);
     backdrop-filter: blur(10px);
     padding: 40px;
@@ -213,14 +201,10 @@ main.sub-content {
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-
-/* ALTERADO: Os títulos internos H2 e H3 que eram azul claro agora usam o azul combinando ou branco puro */
-
 main.sub-content h2,
 main.sub-content h3 {
     font-family: 'RadicalBrush', Arial !important;
     color: #79a6d2;
-    /* Um azul médio harmônico que contrasta perfeitamente com o fundo escuro */
     margin-top: 30px;
     margin-bottom: 15px;
     letter-spacing: 1px;
@@ -267,7 +251,7 @@ main.sub-content img {
 }
 
 
-/* PatArt Layout */
+/* Layout patinação artistica */
 
 body.patart-page main.sub-content img {
     width: 700px;
@@ -292,9 +276,6 @@ footer.sub-footer {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.5);
 }
-
-
-/* RESPONSIVIDADE */
 
 @media (max-width: 576px) {
     header h1.sub-title {
