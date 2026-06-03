@@ -364,21 +364,31 @@ footer.sub-footer {
     border-color: #79a6d2;
 }
 
-/* Caixa com a quantidade de erros */
-.caixa-erros {
+/* Base das Caixas de Placar */
+.caixa-placar {
     display: inline-block;
-    background: rgba(217, 83, 79, 0.2);
-    border: 1px solid rgba(217, 83, 79, 0.4);
-    padding: 8px 20px;
+    padding: 8px 22px;
     border-radius: 50px;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #ff6b6b;
     backdrop-filter: blur(5px);
-    margin: 0 auto;
 }
 
-/* Feedback de Acerto e Erro */
+/* Caixa de Acertos */
+.caixa-acertos {
+    background: rgba(76, 175, 80, 0.2);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    color: #69db7c;
+}
+
+/* Caixa de Erros */
+.caixa-erros {
+    background: rgba(217, 83, 79, 0.2);
+    border: 1px solid rgba(217, 83, 79, 0.4);
+    color: #ff6b6b;
+}
+
+/* Feedback de Acerto e Erro na mensagem central */
 #mensagem {
     font-family: 'PlanetGamers', sans-serif !important;
     font-size: 2rem;
