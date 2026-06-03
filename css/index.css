@@ -35,10 +35,10 @@
 
 body {
     font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-    color: #fff;
+    color: #fff; 
     padding: 40px;
-    /* Fundo escuro unificado */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/fundo-preto.avif") no-repeat center center/cover;
+    
+    background: radial-gradient(circle, #4a4a4a 0%, #000000 100%); 
     background-attachment: fixed;
 }
 
@@ -81,8 +81,8 @@ h1.index-title {
 }
 
 .container .cards .card {
-    /* O azul padrão dos cards que você curte */
-    background: rgba(0, 51, 102, 0.4);
+    
+    background: rgba(234, 231, 231, 0.17); 
     padding: 20px;
     border-radius: 15px;
     width: 260px;
@@ -96,7 +96,7 @@ h1.index-title {
 
 .container .cards .card:hover {
     transform: translateY(-8px);
-    background: rgba(0, 51, 102, 0.7) !important;
+    background: rgba(81, 81, 81, 0.7) !important;
     /* Mantém a identidade azul no hover, apenas mais nítida */
 }
 
@@ -166,22 +166,20 @@ h1.index-title {
 
 /* Títulos Principais das Subpáginas */
 
-body.hockey-page header h1.sub-title,
-body.patart-page header h1.sub-title {
-    font-family: 'MeltingIce', sans-serif !important;
-}
-
-body.inline-page header h1.sub-title,
-body.quad-page header h1.sub-title {
-    font-family: 'SpeedDemon', sans-serif !important;
-}
-
 header h1.sub-title {
     text-align: center;
     margin-bottom: 10px;
     font-size: 5rem;
     color: #ffffff;
-    letter-spacing: 3px;
+    font-family: 'MeltingIce', sans-serif !important;
+    text-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+}
+
+header p.sub-desc {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 
@@ -206,7 +204,7 @@ main.sub-content {
     max-width: 1000px;
     margin: 0 auto;
     /* ALTERADO: Agora usa exatamente o mesmo tom de azul escuro translúcido (rgba) dos seus cards */
-    background: rgba(0, 51, 102, 0.4);
+    background: rgba(75, 75, 75, 0.4);
     backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 20px;
