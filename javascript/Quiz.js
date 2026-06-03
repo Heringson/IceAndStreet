@@ -3,9 +3,11 @@ let Pergunta = document.querySelector("#pergunta");
 let respostasContainer = document.querySelector("#respostas");
 let mensagem = document.querySelector("#mensagem");
 let contadorErrosContainer = document.querySelector("#contador-erros");
+let contadorAcertosContainer = document.querySelector("#contador-acertos");
 
-// Variável para contar erros
+// Variáveis de Placar
 let totalErros = 0;
+let totalAcertos = 0;
 
 // armazenar perguntas
 const perguntas = [
@@ -176,7 +178,7 @@ function loadPergunta() {
     // terminou tudo
     if (perguntasUsadas.length === perguntas.length) {
 
-        Pergunta.innerHTML = `Parabéns! Você terminou com ${totalErros} erro(s)!`;
+        Pergunta.innerHTML = `Quiz Concluído!<br><small style="font-size: 1.2rem; color: #aaa;">Acertos: ${totalAcertos} | Erros: ${totalErros}</small>`;
 
         respostasContainer.innerHTML = "";
 
@@ -209,10 +211,12 @@ function loadPergunta() {
                 }
             });
 
-            // reinicia quiz
+            // reinicia quiz e limpa placares
             perguntasUsadas = [];
             totalErros = 0;
+            totalAcertos = 0;
             contadorErrosContainer.innerHTML = totalErros;
+            contadorAcertosContainer.innerHTML = totalAcertos;
 
             mensagem.innerHTML = "";
             Pergunta.innerHTML = "";
@@ -261,7 +265,7 @@ function loadPergunta() {
                 easing: 'easeInOutSine',
                 direction: 'alternate',
 
-                scale: 1.03, // Suavizado para não quebrar o layout do bloco largo
+                scale: 1.03,
 
                 complete: function () {
 
@@ -280,6 +284,10 @@ function loadPergunta() {
 
                 mensagem.classList.remove("errou");
                 mensagem.classList.add("acertou");
+
+                // Incrementa e atualiza o contador de acertos
+                totalAcertos++;
+                contadorAcertosContainer.innerHTML = totalAcertos;
 
                 // animação da mensagem
                 anime({
@@ -320,7 +328,7 @@ function loadPergunta() {
                 mensagem.classList.remove("acertou");
                 mensagem.classList.add("errou");
 
-                // Incrementa contador de erros e atualiza tela
+                // Incrementa e atualiza o contador de erros
                 totalErros++;
                 contadorErrosContainer.innerHTML = totalErros;
 
