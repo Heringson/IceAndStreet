@@ -3,8 +3,15 @@
 O **IceAndStreet** é um blog informativo e interativo focado no universo da patinação em suas diversas vertentes, do gelo ao asfalto. O objetivo do projeto é funcionar como um guia visual e técnico completo, explicando as funções, componentes, anatomia e histórias por trás dos principais tipos de patins utilizados por entusiastas e profissionais.
 
 <p align="center">
-<img width="1129" height="846" alt="image" src="https://github.com/user-attachments/assets/14ab0c79-ccd5-4ab8-b9a1-3be9c60b9be0"
+<img width="1129" height="846" alt="image" src="https://github.com/user-attachments/assets/14ab0c79-ccd5-4ab8-b9a1-3be9c60b9be0">
 </p>
+
+---
+
+## 🌐 Link do Projeto
+
+O projeto está implantado e pode ser acessado publicamente através do link abaixo:
+> 🔗 **[Acessar IceAndStreet na Azure](https://iceandstreet.azurewebsites.net/index.html)**
 
 ---
 
@@ -12,11 +19,11 @@ O **IceAndStreet** é um blog informativo e interativo focado no universo da pat
 
 O projeto foi estruturado com foco em semântica, performance visual e interatividade, incluindo:
 
-*   **Subpáginas Imersivas:** Conteúdo técnico detalhado sobre a história, anatomia e curiosidades de cada modalidade.
-*   **Galeria de Imagens Inteligente:** Imagens técnicas, infográficos e rastros geométricos renderizados de forma proporcional e responsiva (`object-fit: contain`).
-*   **Efeito Hover nos Cards:** Cards dinâmicos na Home Page que alternam entre imagens coloridas e preto-e-branco ao passar o mouse.
-*   **Mini-Quiz Interativo:** Um sistema de perguntas e respostas integrado via JavaScript para testar os conhecimentos do usuário, contando com placar dinâmico de acertos/erros e feedbacks visuais em tempo real.
-*   **Design Responsivo:** Interface totalmente adaptada para leitura fluida tanto em computadores quanto em dispositivos móveis.
+* **Subpáginas Imersivas:** Conteúdo técnico detalhado sobre a história, anatomia e curiosidades de cada modalidade.
+* **Galeria de Imagens Inteligente:** Imagens técnicas, infográficos e rastros geométricos renderizados de forma proporcional e responsiva (`object-fit: contain`).
+* **Efeito Hover nos Cards:** Cards dinâmicos na Home Page que alternam entre imagens coloridas e preto-e-branco ao passar o mouse.
+* **Mini-Quiz Interativo:** Um sistema de perguntas e respostas integrado via JavaScript para testar os conhecimentos do usuário, contando com placar dinâmico de acertos/erros e feedbacks visuais em tempo real.
+* **Design Responsivo:** Interface totalmente adaptada para leitura fluida tanto em computadores quanto em dispositivos móveis.
 
 ---
 
@@ -30,6 +37,7 @@ O projeto foi estruturado com foco em semântica, performance visual e interativ
 | **Patinação Quad** | O charme retrô das quatro rodas em paralelo. | Roller Derby, cultura Disco dos anos 70/80 e *Trucks*. |
 
 ---
+
 ## 🛠️ Tecnologias Utilizadas
 
 O projeto utiliza as ferramentas fundamentais do desenvolvimento Web moderno integradas a uma infraestrutura sólida de testes, qualidade e deploy contínuo:
@@ -45,6 +53,7 @@ O projeto utiliza as ferramentas fundamentais do desenvolvimento Web moderno int
 | <img src="https://img.shields.io/badge/SonarQube-4E9BCD?style=flat&logo=sonarqube&logoColor=white" alt="SonarQube" /> | Análise estática do código para assegurar padrões de clean code, segurança e cobertura de testes. |
 | <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white" alt="Docker" /> | Conteinerização da aplicação para garantir que o ambiente rode idêntico em qualquer máquina. |
 | <img src="https://img.shields.io/badge/azure-%230072C6.svg?style=flat&logo=microsoftazure&logoColor=white" alt="Azure" /> | Plataforma de nuvem utilizada para a hospedagem, gerenciamento do ambiente e pipelines de CI/CD. |
+
 ---
 
 ## 📦 Como Executar o Projeto Localmente
@@ -64,3 +73,12 @@ cd IceAndStreet
 
 # Mudar para a branch dev (onde estão as atualizações mais recentes)
 git checkout dev
+```
+👥 Integrantes
+Desenvolvedores que participaram do projeto:
+
+RA: 2404307 — Heringson Lima
+
+RA: 2519853 — Rafael Iene Manoel
+
+RA: 2522594 — Wesley da Silva Santos
