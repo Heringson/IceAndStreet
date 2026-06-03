@@ -2,6 +2,10 @@
 let Pergunta = document.querySelector("#pergunta");
 let respostasContainer = document.querySelector("#respostas");
 let mensagem = document.querySelector("#mensagem");
+let contadorErrosContainer = document.querySelector("#contador-erros");
+
+// Variável para contar erros
+let totalErros = 0;
 
 // armazenar perguntas
 const perguntas = [
@@ -172,15 +176,16 @@ function loadPergunta() {
     // terminou tudo
     if (perguntasUsadas.length === perguntas.length) {
 
-        Pergunta.innerHTML = "Parabéns! Você terminou!";
+        Pergunta.innerHTML = `Parabéns! Você terminou com ${totalErros} erro(s)!`;
 
         respostasContainer.innerHTML = "";
 
         const button = document.createElement("button");
 
-        button.innerHTML = "Voltar";
+        button.innerHTML = "Reiniciar Quiz";
 
         button.classList.add("resposta");
+        button.style.textAlign = "center";
 
         button.addEventListener("click", () => {
 
@@ -206,9 +211,10 @@ function loadPergunta() {
 
             // reinicia quiz
             perguntasUsadas = [];
+            totalErros = 0;
+            contadorErrosContainer.innerHTML = totalErros;
 
             mensagem.innerHTML = "";
-
             Pergunta.innerHTML = "";
 
             setTimeout(() => {
@@ -255,7 +261,7 @@ function loadPergunta() {
                 easing: 'easeInOutSine',
                 direction: 'alternate',
 
-                scale: 1.1,
+                scale: 1.03, // Suavizado para não quebrar o layout do bloco largo
 
                 complete: function () {
 
@@ -283,7 +289,7 @@ function loadPergunta() {
                     easing: 'easeInOutSine',
                     direction: 'alternate',
 
-                    scale: 1.5,
+                    scale: 1.2,
 
                     complete: function () {
 
@@ -314,7 +320,11 @@ function loadPergunta() {
                 mensagem.classList.remove("acertou");
                 mensagem.classList.add("errou");
 
-                // animação de erro
+                // Incrementa contador de erros e atualiza tela
+                totalErros++;
+                contadorErrosContainer.innerHTML = totalErros;
+
+                // animação de erro (shake)
                 anime({
                     targets: button,
 
