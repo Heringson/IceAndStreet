@@ -3,7 +3,7 @@
 O **IceAndStreet** é um blog informativo e interativo focado no universo da patinação em suas diversas vertentes, do gelo ao asfalto. O objetivo do projeto é funcionar como um guia visual e técnico completo, explicando as funções, componentes, anatomia e histórias por trás dos principais tipos de patins utilizados por entusiastas e profissionais.
 
 <p align="center">
-  <img width="100%" alt="Demonstração do IceAndStreet" src="https://github.com/user-attachments/assets/db0aef68-a02b-4ad1-bab9-409ddff142b3" />
+<img width="1129" height="846" alt="image" src="https://github.com/user-attachments/assets/14ab0c79-ccd5-4ab8-b9a1-3be9c60b9be0"
 </p>
 
 ---
