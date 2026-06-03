@@ -155,3 +155,186 @@ const perguntas = [
         ]
     }
 ];
+
+// controla perguntas já usadas
+let perguntasUsadas = [];
+
+
+// função aleatória
+function numeroAleatorio() {
+    return Math.floor(Math.random() * perguntas.length);
+}
+
+
+// carregar pergunta
+function loadPergunta() {
+
+    // terminou tudo
+    if (perguntasUsadas.length === perguntas.length) {
+
+        Pergunta.innerHTML = "Parabéns! Você terminou!";
+
+        respostasContainer.innerHTML = "";
+
+        const button = document.createElement("button");
+
+        button.innerHTML = "Voltar";
+
+        button.classList.add("resposta");
+
+        button.addEventListener("click", () => {
+
+            // animação do botão
+            anime({
+                targets: button,
+
+                duration: 350,
+                easing: 'easeInOutSine',
+                direction: 'alternate',
+
+                scale: 1.2,
+
+                complete: function () {
+
+                    anime({
+                        targets: button,
+                        scale: 1,
+                    });
+
+                }
+            });
+
+            // reinicia quiz
+            perguntasUsadas = [];
+
+            mensagem.innerHTML = "";
+
+            Pergunta.innerHTML = "";
+
+            setTimeout(() => {
+                loadPergunta();
+            }, 400);
+
+        });
+
+        respostasContainer.appendChild(button);
+
+        return;
+    }
+
+    let indice;
+
+    // evita repetir perguntas
+    do {
+        indice = numeroAleatorio();
+    } while (perguntasUsadas.includes(indice));
+
+    perguntasUsadas.push(indice);
+
+    const item = perguntas[indice];
+
+    Pergunta.innerHTML = item.pergunta;
+
+    respostasContainer.innerHTML = "";
+
+    item.respostas.forEach((resposta) => {
+
+        const button = document.createElement("button");
+
+        button.innerHTML = resposta.option;
+
+        button.classList.add("resposta");
+
+        button.addEventListener("click", () => {
+
+            // animação do clique
+            anime({
+                targets: button,
+
+                duration: 250,
+                easing: 'easeInOutSine',
+                direction: 'alternate',
+
+                scale: 1.1,
+
+                complete: function () {
+
+                    anime({
+                        targets: button,
+                        scale: 1,
+                    });
+
+                }
+            });
+
+            // acertou
+            if (resposta.correct) {
+
+                mensagem.innerHTML = "Acertou!";
+
+                mensagem.classList.remove("errou");
+                mensagem.classList.add("acertou");
+
+                // animação da mensagem
+                anime({
+                    targets: mensagem,
+
+                    duration: 350,
+                    easing: 'easeInOutSine',
+                    direction: 'alternate',
+
+                    scale: 1.5,
+
+                    complete: function () {
+
+                        anime({
+                            targets: mensagem,
+                            scale: 1,
+                        });
+
+                    }
+                });
+
+                // próxima pergunta
+                setTimeout(() => {
+
+                    mensagem.innerHTML = "";
+
+                    loadPergunta();
+
+                }, 1000);
+
+            }
+
+            // errou
+            else {
+
+                mensagem.innerHTML = "Errou!";
+
+                mensagem.classList.remove("acertou");
+                mensagem.classList.add("errou");
+
+                // animação de erro
+                anime({
+                    targets: button,
+
+                    keyframes: [
+                        { translateX: -6 },
+                        { translateX: 7 },
+                    ],
+
+                    direction: 'alternate',
+                    duration: 120,
+                    loop: 3,
+                    easing: 'easeInOutSine',
+                });
+
+            }
+
+        });
+
+        respostasContainer.appendChild(button);
+
+    });
+
+}
