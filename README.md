@@ -7,7 +7,7 @@ O site aborda modalidades como:
 * **Patins Inline** (Rollerblade)
 * **Patins Quad** (Tradicional de 4 rodas)
 * **Patins de Rock / Rockered** (Configuração específica para maior manobrabilidade)
-<img width="1239" height="866" alt="image" src="https://github.com/user-attachments/assets/db0aef68-a02b-4ad1-bab9-409ddff142b3" />
+<img width="1084" height="769" alt="image" src="https://github.com/user-attachments/assets/0aa89971-d3d5-4caf-9723-444ce8a97788" />
 
 ---
 
