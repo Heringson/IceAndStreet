@@ -1,0 +1,56 @@
+name: Deploy
+run-name: Deploy do site
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+    deploy:
+        name: deploy
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4.2.2
+              with:
+                fetch-depth: 0
+            
+            - name: Docker login
+              uses: docker/login-action@v3.4.0
+              with:
+                username: ${{ secrets.DOCKER_USER }}
+                password: ${{ secrets.DOCKER_PASSWORD }}
+            
+            - name: Docker Build and Push
+              uses: docker/build-push-action@v6.16.0
+              with:
+                context: .
+                file: ./Dockerfile
+                push: true
+                tags: heringsonlima/iceandstreet:latest
+            
+            - name: Azure Deploy
+              uses: Azure/webapps-deploy@v3.0.1
+              with: 
+                app-name: iceandstreet
+                publish-profile: ${{ secrets.PUBLISH_PROFILE }}
+                images: heringsonlima/iceandstreet:latest
+    
+    integration-test:
+        name: test-e2e
+        runs-on: ubuntu-latest
+        needs: deploy
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4.2.2
+              with:
+                fetch-depth: 0
+            
+            # Usando a Action oficial do Cypress que cuida de permissões e instalação automaticamente
+            - name: Run Cypress E2E Test
+              uses: cypress-io/github-action@v7
