@@ -338,3 +338,6 @@ function loadPergunta() {
     });
 
 }
+
+// iniciar quiz
+loadPergunta();
