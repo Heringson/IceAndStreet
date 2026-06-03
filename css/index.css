@@ -1,4 +1,4 @@
-/*fontes usadas*/
+/*fontes de escrita usadas por tema */
 
 @font-face {
     font-family: 'RadicalBrush';
@@ -189,7 +189,7 @@ body.patart-page header p.sub-desc {
 }
 
 
-/* Corpo Principal (O Card Gigante das Subpáginas) */
+/* Corpo Principal (O Card Maior das Subpaginas) */
 
 main.sub-content {
     max-width: 1000px;
@@ -265,9 +265,6 @@ body.patart-page main.sub-content img:hover {
     box-shadow: 0 10px 25px rgba(0, 51, 102, 0.5);
     /* Sombra ajustada para o azul escuro */
 }
-
-
-/* Rodapé */
 
 footer.sub-footer {
     text-align: center;
