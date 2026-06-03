@@ -19,6 +19,14 @@ jobs:
               with:
                 fetch-depth: 0
             
+            # Atualizado para a v4 para evitar avisos de depreciação do Node 20
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+            
+            # Se você usa cache do npm, pode adicionar aqui para acelerar o build se necessário
+            
             - name: Docker login
               uses: docker/login-action@v3.4.0
               with:
@@ -51,6 +59,14 @@ jobs:
               with:
                 fetch-depth: 0
             
-            # Usando a Action oficial do Cypress que cuida de permissões e instalação automaticamente
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+            
+            # Usando a Action oficial do Cypress apontando para a pasta correta
             - name: Run Cypress E2E Test
               uses: cypress-io/github-action@v7
+              with:
+                # Indica à Action que o package.json e as configs do Cypress estão nesta subpasta
+                working-directory: integration-test
